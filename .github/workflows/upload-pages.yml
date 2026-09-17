@@ -33,7 +33,13 @@ jobs:
       with:
         flutter-version: "3.47.4"
     - run: flutter pub get
+    
     - run: flutter build web --base-href /RMP-Flutter/
+    
+    - name: Check build
+      run: |
+        ls -la build/web
+        grep '<base href' build/web/index.html
     
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
