@@ -142,10 +142,10 @@ var redirectTo = "";
             mainAxisSize: MainAxisSize.min,
             children: [
               const Text(
-                'Login:',
+                'Вход в аккаунт:',
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
               ),
-              const Text('Sign in with:'),
+              const Text('Вход с помощью:'),
               const SizedBox(height: 12),
               Form(
                 key: _formKey,
@@ -164,7 +164,7 @@ var redirectTo = "";
                         validator: (value) {
                           final email = value?.trim() ?? '';
                           if (email.isEmpty || !email.contains('@')) {
-                            return 'Enter a valid email';
+                            return 'Введите верный email';
                           }
                           return null;
                         },
@@ -182,8 +182,8 @@ var redirectTo = "";
                           border: const OutlineInputBorder(),
                           suffixIcon: IconButton(
                             tooltip: _obscurePassword
-                                ? 'Show password'
-                                : 'Hide password',
+                                ? 'Показать пароль'
+                                : 'Скрыть пароль',
                             onPressed: () => setState(
                               () => _obscurePassword = !_obscurePassword,
                             ),
@@ -196,7 +196,7 @@ var redirectTo = "";
                         ),
                         validator: (value) {
                           if ((value ?? '').length < 6) {
-                            return 'Password must be at least 6 characters';
+                            return 'Пароль должен иметь как минимум 6 символов';
                           }
                           return null;
                         },
@@ -207,7 +207,7 @@ var redirectTo = "";
                       onPressed: _isSigningIn
                           ? null
                           : _signInWithEmailAndPassword,
-                      child: Text(_isRegistering ? 'Create account' : 'Sign in'),
+                      child: Text(_isRegistering ? 'Создать аккаунт' : 'Войти'),
                     ),
                     TextButton(
                       onPressed: _isSigningIn
@@ -217,8 +217,8 @@ var redirectTo = "";
                               ),
                       child: Text(
                         _isRegistering
-                            ? 'Already have an account? Sign in'
-                            : 'Need an account? Create one',
+                            ? 'Уже есть аккаунт? Войти'
+                            : 'Нужен аккаунт? Создайте',
                       ),
                     ),
                   ],

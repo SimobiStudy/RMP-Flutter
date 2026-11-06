@@ -78,7 +78,7 @@ class _SupabaseAuthState extends State<SupabaseAuthPage> {
   @override
   void initState() {
     if (kIsWeb) {
-      redirectTo = "https://simobistudy.github.io/RMP-Flutter/supabase";
+      redirectTo = "https://simobistudy.github.io/RMP-Flutter/#/supabase";
     } else if (Platform.isAndroid) {
       redirectTo = "flutter-test-app://login-callback";
   }
